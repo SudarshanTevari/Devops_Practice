@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @SudarshanTevari
+- 👋 Hi, I’m @Sudarshan
 - 👀 I’m interested in DevOps
 - 🌱 I’m currently learning Github
 - 📫 How to reach me ==> sudarshanteavri@gmail.com
