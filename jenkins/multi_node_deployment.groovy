@@ -10,7 +10,7 @@ pipeline{
         }
         stage('Test'){
             steps{
-                node('node1'){
+                node('node2'){
                     sh 'echo "Test stage running on `hostname` server" '
                 }
             }
