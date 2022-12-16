@@ -4,21 +4,21 @@ pipeline{
         stage('Bilid'){
             steps{
                 node('node1'){
-                    sh 'echo "Build stage running on `hostname`" '
+                    sh 'echo "Build stage running on `hostname` server" '
                 }
             }
         }
         stage('Test'){
             steps{
                 node('node1'){
-                    sh 'echo "Test stage running on `hostname`" '
+                    sh 'echo "Test stage running on `hostname` server" '
                 }
             }
         }
         stage('Deploy'){
             steps{
                 node('node1'){
-                    sh 'echo "Deploy stage runnind on `hostname`" '
+                    sh 'echo "Deploy stage runnind on `hostname` server" '
                 }
             }
         }
