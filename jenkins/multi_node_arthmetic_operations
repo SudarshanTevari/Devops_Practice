@@ -1,0 +1,54 @@
+def addi(){
+   def a = 3
+   def b = 6
+   def c = a + b
+   return c
+}
+
+def subs(){
+   def a = 10
+   def b = 1
+   def c = a - b
+   return c
+}
+
+def multi(){
+   def a = 3
+   def b = 3
+   def c = a * b
+   return c
+}
+
+pipeline{
+    agent any
+    stages{
+        stage('Addition'){
+            steps{
+                script{
+                    output= addi()
+                    echo "The addition of a and b is ${output}"
+                }
+            }
+        }
+        stage('Substraction'){
+            steps{
+                node('node1'){
+                    script{
+                        output= subs()
+                        echo "The substraction of a and b is ${output}"
+                    }
+                }
+            }
+        }
+        stage('Mutiplication'){
+            steps{
+                node('node2'){
+                    script{
+                        output= multi()
+                        echo "The multiplication of a and b is ${output}"
+                    }
+                }
+            }
+        }
+    }
+}
