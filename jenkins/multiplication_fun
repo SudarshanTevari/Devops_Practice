@@ -1,0 +1,20 @@
+def multi(){
+   def a = 2
+   def b = 3
+   def c = a * b
+   return c
+}
+
+pipeline{
+    agent any
+    stages{
+        stage('Multiplication'){
+            steps{
+                script{
+                  output= multi()
+                  echo "The multiplication of a and b is ${output}"
+                }
+            }
+        }
+   }
+}
