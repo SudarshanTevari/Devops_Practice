@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+echo
 echo "---------------------Private IPV4---------------------"
 hostname -I
 
@@ -9,7 +9,5 @@ curl ifconfig.me
 echo
 
 echo "-------------------------IPV6-------------------------"
-ip addr | grep inet6 | awk 'NR>1' | awk '{print $2}'
-
-
-
+ip addr | grep inet6 | awk 'NR>1' | awk '{print $2}' | awk 'NR==1'
+echo
