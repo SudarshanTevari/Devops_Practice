@@ -1,0 +1,46 @@
+pipeline{
+    agent any
+    stages{
+        stage('Image Build'){
+            steps{
+                sh '''
+                echo "Building docker Image..."
+		docker build -t server_details ${WORKSPACE}/docker/alpine_server_details
+                '''
+            }
+        }
+        stage('Image Tag'){
+            steps{
+                sh '''
+                echo "Taging the built image..."
+		docker image tag server_details sudarshantevari/server_details:latest
+                '''
+            }
+        }
+        stage('Image Push'){
+            steps{
+                sh '''
+                echo "Pushing Image to Docker hub..."
+		docker push sudarshantevari/server_details
+		docker image rm -f sudarshantevari/server_details server_details
+                '''
+            }
+        }
+	 stage('Image Pull'){
+            steps{
+                sh '''
+                echo "Pulling the custom image..."
+		docker pull sudarshantevari/server_details:latest
+                '''
+            }
+        }
+	 stage('Docker Container'){
+            steps{
+                sh '''
+                echo "Building the docker container from custom image..."
+		docker run -it -d --name j1 -p 9010:80 sudarshantevari/server_details
+                '''
+            }
+        }
+    }
+}
