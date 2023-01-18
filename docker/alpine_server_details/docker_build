@@ -21,6 +21,8 @@ pipeline{
             steps{
                 sh '''
                 echo "Pushing Image to Docker hub..."
+		docker login -u sudarshantevari
+		docker login -p Aeiou@123
 		docker push sudarshantevari/server_details
 		docker image rm -f sudarshantevari/server_details server_details
                 '''
