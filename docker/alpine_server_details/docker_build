@@ -25,7 +25,7 @@ pipeline{
                 sh '''
                 echo "Pushing Image to Docker hub..."
 		docker login -u sudarshantevari -p Aeiou@123
-		docker push sudarshantevari/server_details
+		docker push sudarshantevari/server_details:latest
 		docker image rm -f sudarshantevari/server_details server_details
                 '''
             }
