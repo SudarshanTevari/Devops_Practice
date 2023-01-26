@@ -1,0 +1,22 @@
+pipeline {
+    agent {
+        docker {
+            image "alpine:latest"
+        }
+    }
+    options {
+        newContainerPerStage()
+    }
+    stages {
+        stage('Stage1') {
+            steps {
+                sh 'echo "Container1 Hostname: `hostname`"'
+            }
+        }
+        stage('Stage2') {
+            steps {
+                sh 'echo "Container2 Hostname: `hostname`"'
+            }
+        }
+    }
+}
