@@ -1,0 +1,12 @@
+pipeline{
+    agent{
+        docker { image 'sudarshantevari/server_details' }
+    }
+    stages{
+        stage('command'){
+            steps{
+                sh 'echo "Hello world!..." '
+            }
+        }
+    }
+}
