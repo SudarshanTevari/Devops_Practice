@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        docker { image 'sudarshantevari/server_details' }
+        docker { image 'centos:7' }
     }
     stages{
         stage('command'){
