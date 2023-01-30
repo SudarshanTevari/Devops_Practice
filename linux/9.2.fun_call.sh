@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-source /home/opc/test/9.1.functions.sh
+source /home/opc/Devops_Practice/linux/9.1.functions.sh
 
 echo "This is called from antother file (user name):" `user`
 
