@@ -2,6 +2,9 @@ pipeline{
     agent{
         docker { image 'centos:7' }
     }
+    options{
+	newContainerPerStage()
+    }
     stages{
         stage('stage1'){
             steps{
