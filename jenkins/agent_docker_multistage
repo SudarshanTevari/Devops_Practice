@@ -1,0 +1,17 @@
+pipeline{
+    agent{
+        docker { image 'centos:7' }
+    }
+    stages{
+        stage('stage1'){
+            steps{
+                sh 'echo "Stage1 Executed on `hostname`" '
+            }
+        }
+        stage('stage2'){
+            steps{
+                sh 'echo "Stage2 Executed on `hostname`" '
+            }
+        }
+    }
+}
