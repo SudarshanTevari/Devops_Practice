@@ -1,0 +1,24 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+   name: mysql-pv
+   labels:
+      type: local
+spec:
+   capacity:
+      storage: 5Gi
+   accessModes:
+      - ReadWriteMany
+   hostPath:
+      path: "/home/ghost/test/"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+   name: mysql-pvc
+spec:
+   accessModes:
+      - ReadWriteMany
+   resources:
+      requests:
+         storage: 3Gi
