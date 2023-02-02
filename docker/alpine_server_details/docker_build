@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    options{buildDiscarder(logRotator(numToKeepStr: '10'))}
+    options{buildDiscarder(logRotator(numToKeepStr: '3'))}
     stages{
         stage('Image Build'){
             steps{
