@@ -7,9 +7,9 @@ metadata:
 spec:
   storageClassName: local
   capacity:
-    storage: 1Gi
+    storage: 5Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   persistentVolumeReclaimPolicy: Delete
   hostPath:
     path: "/mnt/data"
@@ -21,8 +21,8 @@ metadata:
 spec:
   storageClassName: local
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 1Gi
+      storage: 5Gi
 
