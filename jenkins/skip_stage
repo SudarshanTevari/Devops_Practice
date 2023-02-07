@@ -4,7 +4,7 @@ pipeline{
         stage('Stage 1'){
             steps{
                 catchError {
-                    sh 'echo "Hostname of instance: `hostname`"'
+                    sh 'echo "Hostname of instance: hostname`"'
                 }
                 echo currentBuild.result
             }
