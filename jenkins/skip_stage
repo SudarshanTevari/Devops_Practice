@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage('Stage 1'){
+            steps{
+                catchError {
+                    sh 'echo "Hostname of instance: `hostname`"'
+                }
+                echo currentBuild.result
+            }
+        }
+        stage('Stage 2'){
+            steps{
+                catchError{
+                    sh 'echo "IPv4 address of instance is: `curl ifconfig.me`"'
+                }
+                echo currentBuild.result
+            }
+        }
+    }
+}
+
