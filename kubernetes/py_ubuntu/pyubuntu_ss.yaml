@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: pyubuntu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pyubuntu
+  updateStrategy:
+    type: RollingUpdate
+  podManagementPolicy: OrderedReady
+  template:
+    metadata:
+      labels:
+        app: pyubuntu
+    spec:
+      containers:
+      - image: sudarshantevari/pyubuntu:v1
+        name: pyubuntu
+        command: ["/bin/sleep", "3650d"]
